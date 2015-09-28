@@ -9,7 +9,7 @@ This repository _is not_ the original repository for this tool. Here are some li
 
 In this repository, for Synoptic you will find:
 * :white_check_mark: Source code (not available)
-* :white_check_mark: [The original tool](SomeExecutableInTheRepo) (available)
+* :white_check_mark: The original tool (available)
 
 This repository was constructed by [Priyadarshini Rajagopal](https://github.com/PriyadarshiniRajagopal) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson).  
 
