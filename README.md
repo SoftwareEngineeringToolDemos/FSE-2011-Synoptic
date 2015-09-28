@@ -1,3 +1,21 @@
+# Additional Acknowledgements #
+
+This repository is contains information related to the tool Synoptic presented Foundations of Software Engineering, 2011. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?id=2025188).
+
+This repository _is not_ the original repository for this tool. Here are some links to the original project:
+* [The project source code with help tutorials for users](https://github.com/ModelInference/synoptic)
+* [ An older version of the tool deployed with a web front-end online](http://synoptic.cs.washington.edu/)
+
+
+In this repository, for Synoptic you will find:
+* :white_check_mark: Source code (not available)
+* :white_check_mark: [The original tool](SomeExecutableInTheRepo) (available)
+
+This repository was constructed by [Priyadarshini Rajagopal](https://github.com/PriyadarshiniRajagopal) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson).  
+
+***
+
+
 # Overview #
 
 This site hosts source code, academic papers, and other resources for three related projects:
