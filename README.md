@@ -13,6 +13,8 @@ In this repository, for Synoptic you will find:
 
 This repository was constructed by [Priyadarshini Rajagopal](https://github.com/PriyadarshiniRajagopal) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson).  
 
+I would also like to thank Ivan Beschastnikh and his colleagues for all their help setting up the tool.
+
 ***
 
 
