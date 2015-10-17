@@ -5,15 +5,16 @@ This repository is contains information related to the tool Synoptic presented F
 This repository _is not_ the original repository for this tool. Here are some links to the original project:
 * [The project source code with help tutorials for users](https://github.com/ModelInference/synoptic)
 * [ An older version of the tool deployed with a web front-end online](http://synoptic.cs.washington.edu/)
+* There is no link to the original video of the tool.
 
 
 In this repository, for Synoptic you will find:
-* :white_check_mark: Source code (not available)
+* :white_check_mark: Source code (available)
 * :white_check_mark: The original tool (available)
 
 This repository was constructed by [Priyadarshini Rajagopal](https://github.com/PriyadarshiniRajagopal) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson).  
 
-I would also like to thank Dr.Ivan Beschastnikh and his colleagues for all their help setting up the tool.
+I would also like to thank Dr.Ivan Beschastnikh for all his help setting up the tool.
 
 ***
 
