@@ -1,10 +1,11 @@
 # Additional Acknowledgements #
 
-This repository is contains information related to the tool Synoptic presented Foundations of Software Engineering, 2011. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?id=2025188).
+This repository contains information related to the tool Synoptic presented Foundations of Software Engineering, 2011. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?id=2025188).
 
 This repository _is not_ the original repository for this tool. Here are some links to the original project:
 * [The project source code with help tutorials for users](https://github.com/ModelInference/synoptic)
 * [ An older version of the tool deployed with a web front-end online](http://synoptic.cs.washington.edu/)
+* [The binaries of the project](https://github.com/vrushti1991/FSE-2011-Synoptic/tree/master/bin)
 * There is no link to the original video of the tool.
 
 
