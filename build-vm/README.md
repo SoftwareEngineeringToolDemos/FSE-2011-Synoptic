@@ -26,7 +26,7 @@ In this folder you will find:
 1. Ubuntu Desktop 15.04
     * Username : vagrant
     * Password : vagrant
-2. Java 7
+2. Java OpenJDK 7
 
 ***
 
