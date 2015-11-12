@@ -4,14 +4,14 @@ In this folder you will find:
 
 ***
 
-# Minimum requirements for using this Vagrant Script :
+# Minimum requirements for using this Vagrant Script 
 * Any 64-bit OS
 * VirtualBox (preferrably 5.0.6)
 * Vagrant (preferrably 1.7.4) 
 
 ***
- 
- # Steps to create the VM using Vagrant 
+
+# Steps to create the VM using Vagrant 
  1. Download and install [Vagrant] (https://www.vagrantup.com/downloads.html) appropriate to your host OS.
  2. Download and install [VirtualBox] (https://www.virtualbox.org/wiki/Downloads) appropriate to your host OS.
  3. Copy the "Vagrantfile" in this folder to your host OS.
