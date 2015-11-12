@@ -31,8 +31,8 @@ In this folder you will find:
 ***
 
 # Acknowledgements
-* This VM uses [box-cutter/ubuntu1504-desktop](https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1504-desktop/versions/2.0.5) 
-which is a standard and stable external resource.
+* This VM uses the base box [box-cutter/ubuntu1504-desktop](https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1504-desktop/versions/2.0.5) 
+which is a standard and stable external resource. This is identical to the operating system as used by the hand built VM.
 * A simple tutorial to help new users install Java onto their machines can be viewed [here] (https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get)
 * A tutorial to create the Vagrant script was followed which can be found [here] (https://blog.engineyard.com/2014/building-a-vagrant-box)
 
