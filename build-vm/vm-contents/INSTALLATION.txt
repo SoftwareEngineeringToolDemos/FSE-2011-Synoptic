@@ -1,0 +1,47 @@
+***************************************************************************************************************************************
+Attribution for Installation steps:
+
+https://github.com/ModelInference/synoptic/wiki/DocsInstallation#installing-synoptic-from-source
+
+The following instructions were obtained from the original git repository authored by Ivan Beschastnikh and colleagues.
+***************************************************************************************************************************************
+
+Here's how you install Synoptic from the source repository:
+
+(1)Make sure that you have installed a copy of JRE 7 or higher and that the java command is in your path.
+
+(2)First, you will need to check out the Synoptic source code repository (warning: it is over 250MB).
+
+(3)(i)Next, you can build Synoptic from the command line with ant, or build it from within Eclipse (a Java IDE).
+
+Building from the command line (simpler):
+
+    Assuming that you checked out the code into synoptic/, there will be a top-level synoptic/build.xml file for ant to build all of the projects in the repository.
+    Run ant synoptic inside the synoptic/ directory to build synoptic and all of its dependencies.
+(3)(ii)
+Building from within Eclipse (more complex):
+
+    (a)Install Eclipse and JDK 7.
+    (b)Assuming that you checked out the code into synoptic/, you can now import an "existing project" into Eclipse from synoptic/synoptic/.
+    Import the 'synoptic' project into Eclipse. Eclipse will fail to locate jar dependencies because the project depends on a SYNOPTIC_LIB variable. This variable specifies where external jars can be found on the local file system. Define and set this variable by doing the following:
+        (c)Right click on your project and select Properties
+        (d)Select Java Build Path and then the Libraries tab
+        (e)Select Add Variable...
+        (f)Select Configure Variables...
+        (g)Select New...
+        (h)Give the variable the name SYNOPTIC_LIB
+        (i)Select Folder..., and navigate to synoptic/lib/
+        (j)Select OK, and then another OK.
+        (k)Select your new variable from the list, click on Extend...
+        (l)Navigate to and include the following jar files from synoptic/lib/ for: junit, plume, daikon, json
+        (m)Import the 'daikonizer' project into Eclipse (note: synoptic depends on daikonizer).
+        You will need to follow the steps above to add a SYNOPTIC_LIB variable and specify a dependency on synoptic/lib/daikon.jar
+        (n)You should see that the build.xml file has errors (if not, skip this step). Fix this by disabling all buildfile errors: under Preferences -> Ant -> Editor, in the tab Problems, check "Ignore all buildfile problems".
+        (o)Build both synoptic and daikonizer projects from Eclipse. This should produce .class files in synoptic/synoptic/bin/.
+
+Finally, you will want to test your build:
+
+(4)Run one of the following two (equivalent) commands from within synoptic/
+        synoptic.sh -h
+        java -cp ./lib/*:./synoptic/bin/ synoptic.main.SynopticMain -h
+(5)Confirm that the execution outputs a help/usage screen
