@@ -26,7 +26,12 @@ In this folder you will find:
 1. Ubuntu Desktop 15.04
     * Username : vagrant
     * Password : vagrant
-2. Java OpenJDK 7
+2. Packages installed:
+    * Java OpenJDK 7
+    * Apache ant
+    * Graphviz
+    * Flash plugin (to view the Youtube video)
+    * Unzip
 
 ***
 
