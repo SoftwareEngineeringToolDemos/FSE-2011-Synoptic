@@ -98,6 +98,26 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       sudo apt-get -y update
       sudo apt-get -y install openjdk-7-jre
       sudo apt-get -y install openjdk-7-jdk
+      sudo apt-get -y install ant
+      sudo apt-get -y install git
+      sudo apt-get -y install graphviz
+      #Eclipse installation
+      #Download the tar folder for eclipse
+      cd ~/Downloads
+      wget http://eclipse.mirror.rafal.ca/technology/epp/downloads/release/kepler/SR2/eclipse-standard-kepler-SR2-linux-gtk-x86_64.tar.gz
+      #Untar the file
+      tar -xvf eclipse-standard-kepler-SR2-linux-gtk-x86_64.tar.gz
+      #Moving it to another directory to make it launchable from the terminal
+      mv eclipse /usr/local/eclipse
+      ln -s /usr/local/eclipse/eclipse /usr/bin/eclipse
+      cd /home/vagrant/Desktop
+      git clone https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic.git Synoptic
+      cd Synoptic
+      #To be removed: Once the dev branch is merged to master
+      git checkout priya/synoptic-dev
+      ant synoptic
+      ./synoptic.sh -h
+      
   SHELL
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
