@@ -1,6 +1,7 @@
 # Contents of build-vm folder
 In this folder you will find:
-*  **Vagrantfile** - Contains the vagrant script to load the Ubuntu 15 Desktop VM. 
+*  [**Vagrantfile**] (https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/blob/master/build-vm/Vagrantfile)- Contains the vagrant script to load the Ubuntu 15 Desktop VM. 
+*  [**vm-contents**] (https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/tree/master/build-vm/vm-contents) -Contains the files that will be copied over to the VM desktop.
 
 ***
 
