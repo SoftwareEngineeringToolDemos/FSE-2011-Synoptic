@@ -67,7 +67,12 @@ The -s option commands Synoptic to separate the log lines above and below the ma
 
 The log file contains lines that do not match any of the supplied regex, such as "loginwindow35: Login Window Started Security Agent". The -i option specifies Synoptic to ignore these non-matching lines.
 
-This command produces a model file in the form of a graph.From the graph, you can analyze the sequence of events that follow each other for an OSX login. The output also highlights a bug in the system, as a failed_authorization event can be followed by an authorized event. This information can be used to identify bugs in the system
+This command produces a model file in the form of a graph.From the graph, you can analyze the sequence of events that follow each other for an OSX login. The output also highlights a bug in the system, as a failed_authorization event can be followed by an authorized event. This information can be used to identify bugs in the system.
+
+(5)OUTPUT:
+The output will be in the form of a .png image which can be observed and analysed easily.
+In case of the above example, the output can be viewed in the Synoptic folder on the desktop as "osx-login-example.dot.png"
+
 
 
 
