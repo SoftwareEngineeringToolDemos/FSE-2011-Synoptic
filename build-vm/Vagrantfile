@@ -1,6 +1,3 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
@@ -10,35 +7,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "box-cutter/ubuntu1504-dektop"
-
+  config.vm.box = "box-cutter/ubuntu1404-dektop"
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1504-desktop/versions/2.0.5/providers/virtualbox.box"
-
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine. In the example below,
-  # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network :forwarded_port, guest: 80, host: 8080
-
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  # config.vm.network :private_network, ip: "192.168.33.10"
-
-  # Create a public network, which generally matched to bridged network.
-  # Bridged networks make the machine appear as another physical device on
-  # your network.
-  # config.vm.network :public_network
-
-  # If true, then any SSH connections made will enable agent forwarding.
-  # Default value: false
-  # config.ssh.forward_agent = true
-
-  # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder. And the optional third
-  # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.box_url = "https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5/providers/virtualbox.box"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -48,97 +20,78 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   # Don't boot with headless mode
      vb.gui = true
      vb.name = "Synoptic"
-  #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
+     vb.memory = "1024"
     end
-  #
-  # View the documentation for the provider you're using for more
-  # information on available options.
+  # Provisioning done with shell commands for this VM    
+    config.vm.provision "shell",inline: <<-SHELL
 
-  # Enable provisioning with Puppet stand alone.  Puppet manifests
-  # are contained in a directory path relative to this Vagrantfile.
-  # You will need to create the manifests directory and a manifest in
-  # the file base.pp in the manifests_path directory.
-  #
-  # An example Puppet manifest to provision the message of the day:
-  #
-  # # group { "puppet":
-  # #   ensure => "present",
-  # # }
-  # #
-  # # File { owner => 0, group => 0, mode => 0644 }
-  # #
-  # # file { '/etc/motd':
-  # #   content => "Welcome to your Vagrant-built virtual machine!
-  # #               Managed by Puppet.\n"
-  # # }
-  #
-  # config.vm.provision :puppet do |puppet|
-  #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "site.pp"
-  # end
-
-  # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding
-  # some recipes and/or roles.
-  #
-  # config.vm.provision :chef_solo do |chef|
-  #   chef.cookbooks_path = "../my-recipes/cookbooks"
-  #   chef.roles_path = "../my-recipes/roles"
-  #   chef.data_bags_path = "../my-recipes/data_bags"
-  #   chef.add_recipe "mysql"
-  #   chef.add_role "web"
-  #
-  #   # You may also specify custom JSON attributes:
-  #   chef.json = { :mysql_password => "foo" }
-  # end
-  config.vm.provision "shell",inline: <<-SHELL
-      #sudo -i
+      # Install all the necessary packages required to make the tools rul
       sudo apt-get -y update
       sudo apt-get -y install openjdk-7-jre
       sudo apt-get -y install openjdk-7-jdk
       sudo apt-get -y install ant
       sudo apt-get -y install git
       sudo apt-get -y install graphviz
-      #Eclipse installation
-      #Download the tar folder for eclipse
-      cd ~/Downloads
-      wget http://eclipse.mirror.rafal.ca/technology/epp/downloads/release/kepler/SR2/eclipse-standard-kepler-SR2-linux-gtk-x86_64.tar.gz
-      #Untar the file
-      tar -xvf eclipse-standard-kepler-SR2-linux-gtk-x86_64.tar.gz
-      #Moving it to another directory to make it launchable from the terminal
-      mv eclipse /usr/local/eclipse
-      ln -s /usr/local/eclipse/eclipse /usr/bin/eclipse
+      #Adobe Flash player required in order to view the YouTube video
+      sudo apt-get install flashplugin-installer
+      #Software required to unzip the zip file downloaded from git
+      sudo apt-get install unzip
+
+      # Files and folders that have to reside on the desktop are downloaded from the vm-contents folder
       cd /home/vagrant/Desktop
-      git clone https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic.git Synoptic
-      cd Synoptic
-      #To be removed: Once the dev branch is merged to master
-      git checkout priya/synoptic-dev
-      ant synoptic
-      ./synoptic.sh -h
+      sudo wget https://raw.githubusercontent.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/priya/synoptic-dev/build-vm/vm-contents/Installation.txt
+      sudo wget https://raw.githubusercontent.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/priya/synoptic-dev/build-vm/vm-contents/License.txt
+      sudo wget https://raw.githubusercontent.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/priya/synoptic-dev/build-vm/vm-contents/ReadMe.txt
+     sudo wget https://raw.githubusercontent.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/priya/synoptic-dev/build-vm/vm-contents/Synoptic-Summarizing%20Log%20Files-ToolDemo%20-%20YouTube%281%29.desktop 
+     
+      # Give full permission for all files on the desktop so that the user can access all of them
+      sudo chmod 777 /home/vagrant/Desktop/DemoVideo.desktop
+      sudo chmod 777 /home/vagrant/Desktop/Installation.txt
+      sudo chmod 777 /home/vagrant/Desktop/License.txt
+      sudo chmod 777 /home/vagrant/Desktop/ReadMe.txt
+
+      # Download the master-folder as zip from the SoftwareEngineeringToolDemos/FSE-2011-Synoptic repo for the tool
+      wget  https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/archive/master.zip
+      unzip master.zip
+      mv FSE-2011-Synoptic-master/ Synoptic
       
+      # A subfolder of this Synoptic folder contains all the binaries. Make a copy of that on the Desktop into the Binaries folder
+      cp -R Synoptic/bin /home/vagrant/Desktop/Binaries
+      sudo chmod -R 777 /home/vagrant/Desktop/Binaries
+
+      # Remove the zip folder after extracting the files and give full permission to the Synoptic folder in order to view output
+      rm -rf master.zip
+      sudo chmod -R 777 /home/vagrant/Desktop/Synoptic
+      cd Synoptic
+      
+      #Build the synoptic project
+      ant synoptic
+      #Check build with usage screen
+      ./synoptic.sh -h
+
+      #In order to open the terminal on boot, place the .desktop file in the ~/.config folder
+      cd /home/vagrant/.config
+      mkdir autostart
+      cd autostart
+      touch gnome-terminal.desktop
+      printf "[Desktop Entry]\n Type=Application\n Name=Terminal\n Exec=gnome-terminal \nNoDisplay=false" >> gnome-terminal.desktop
+
+      # Make sure the terminal opens up at the correct location- "~/Desktop/Synoptic" for ease of user
+      printf "cd /home/vagrant/Desktop/Synoptic" >> /home/vagrant/.bashrc
+      printf "\n echo *****Commandline Interface for Synoptic*****" >> /home/vagrant/.bashrc
+      
+      # Remove extra applications from the launcher
+      sudo rm -f "/usr/share/applications/ubuntu-amazon-default.desktop"
+      sudo rm -f "/usr/share/applications/libreoffice-calc.desktop"
+      sudo rm -f "/usr/share/applications/libreoffice-writer.desktop"
+      sudo rm -f "/usr/share/applications/libreoffice-impress.desktop"
+      sudo rm -f "/usr/share/applications/ubuntu-software-center.desktop"
+      sudo rm -f "/usr/share/applications/unity-control-center.desktop"
+      sudo rm -f "/usr/share/applications/ubiquity.desktop"
+     
+      #Reboot the system to view changes
+      sudo reboot
+
   SHELL
-  # Enable provisioning with chef server, specifying the chef server URL,
-  # and the path to the validation key (relative to this Vagrantfile).
-  #
-  # The Opscode Platform uses HTTPS. Substitute your organization for
-  # ORGNAME in the URL and validation key.
-  #
-  # If you have your own Chef Server, use the appropriate URL, which may be
-  # HTTP instead of HTTPS depending on your configuration. Also change the
-  # validation key to validation.pem.
-  #
-  # config.vm.provision :chef_client do |chef|
-  #   chef.chef_server_url = "https://api.opscode.com/organizations/ORGNAME"
-  #   chef.validation_key_path = "ORGNAME-validator.pem"
-  # end
-  #
-  # If you're using the Opscode platform, your validator client is
-  # ORGNAME-validator, replacing ORGNAME with your organization name.
-  #
-  # If you have your own Chef Server, the default validation client name is
-  # chef-validator, unless you changed the configuration.
-  #
-  #   chef.validation_client_name = "ORGNAME-validator"
 end
+
