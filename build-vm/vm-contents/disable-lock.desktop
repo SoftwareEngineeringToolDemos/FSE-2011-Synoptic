@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=bash -c 'gsettings set org.gnome.desktop.screensaver lock-enabled false'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=DisableLockScreen
+Comment=Disable the lock screen
+
