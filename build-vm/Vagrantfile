@@ -2,9 +2,6 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "box-cutter/ubuntu1404-dektop"
@@ -12,10 +9,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # doesn't already exist on the user's system.
   config.vm.box_url = "https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5/providers/virtualbox.box"
 
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
    config.vm.provider :virtualbox do |vb|
   #   # Don't boot with headless mode
      vb.gui = true
@@ -75,6 +68,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       cd autostart
       touch gnome-terminal.desktop
       printf "[Desktop Entry]\n Type=Application\n Name=Terminal\n Exec=gnome-terminal \nNoDisplay=false" >> gnome-terminal.desktop
+      #Disable the screen-lock
+      sudo wget https://raw.githubusercontent.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/master/build-vm/vm-contents/disable-lock.desktop
+      sudo chmod 777 /home/vagrant/.config/autostart/disable-lock.desktop     
 
       # Make sure the terminal opens up at the correct location- "~/Desktop/Synoptic" for ease of user
       printf "cd /home/vagrant/Desktop/Synoptic" >> /home/vagrant/.bashrc
