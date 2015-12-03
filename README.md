@@ -4,7 +4,6 @@ This repository contains information related to the tool Synoptic presented Foun
 
 This repository _is not_ the original repository for this tool. Here are some links to the original project:
 * [The project source code with help tutorials for users](https://github.com/ModelInference/synoptic)
-* [ An older version of the tool deployed with a web front-end online](http://synoptic.cs.washington.edu/)
 * [The binaries of the project](https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/tree/master/bin)
 * There is no link to the original video of the tool.
 
