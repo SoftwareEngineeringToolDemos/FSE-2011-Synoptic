@@ -11,10 +11,10 @@ This repository _is not_ the original repository for this tool. Here are some li
 In this repository, for Synoptic you will find:
 * :white_check_mark: [Source code](https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/tree/master/synoptic/src/synoptic) (available)
 * :white_check_mark: [The binaries of the project](https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/tree/master/bin) (available)
-* :x: The original tool (not available directly)
-* :white_check_mark: A slightly modified version of the tool [Priyadarshini Rajagopal](https://github.com/PriyadarshiniRajagopal) got working (no link to file as tool obtained only after build)
+* :white_check_mark: [The original tool ](https://github.com/modelinference/synoptic)(available)
+* :white_check_mark: [A slightly modified version of the tool Priyadarshini Rajagopal got working](https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic)(available)
 * :white_check_mark: [Vagrant script to create the Virtual machine containing the tool ](https://github.com/SoftwareEngineeringToolDemos/FSE-2011-Synoptic/tree/master/build-vm) (available)
-* :white_check_mark: [Virtual machine containing the tool](https://) (available)
+* :white_check_mark: [Virtual machine containing the tool](https://drive.google.com/a/ncsu.edu/file/d/0B9Riz5zecZhGR2twZDBQM1BxUW8/view) (available)
 
 This repository was constructed by [Priyadarshini Rajagopal](https://github.com/PriyadarshiniRajagopal) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson).  
 
