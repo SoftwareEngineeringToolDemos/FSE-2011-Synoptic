@@ -1,3 +1,5 @@
+# FSE-2011-Synoptic
+
 # Additional Acknowledgements #
 
 This repository contains information related to the tool Synoptic presented Foundations of Software Engineering, 2011. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?id=2025188).
